@@ -2,3 +2,12 @@
 layout: main
 title: EmrysPage
 ---
+ <ul>
+    {% for post in site.posts %}
+        <li>
+            <h2><a href="{{ post.url }}" class="inherit-color">{{ post.title }}</a> <span class="date">| {{ post.date | date_to_long_string }}</span></h2>
+            {{ post.excerpt | strip_html | truncatewords: 49 }}
+        </li>
+        <hr>
+    {% endfor %}
+    </ul>
